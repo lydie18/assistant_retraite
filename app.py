@@ -61,6 +61,57 @@ elif page == "📊 Voir les demandes":
         st.dataframe(df)
     except FileNotFoundError:
         st.warning("Aucune demande enregistrée pour le moment.")
+import streamlit as st
+import pandas as pd
+import datetime
+
+# Fonction pour vérifier si le rendez-vous est disponible
+def est_disponible(date_rdv, heure_rdv):
+    try:
+        df = pd.read_csv("rendezvous.csv")
+    except FileNotFoundError:
+        return True  # Si aucun rendez-vous n'est enregistré, tout est disponible
+    
+    # Vérifier si un rendez-vous existe déjà pour la même date et heure
+    if any((df['Date'] == str(date_rdv)) & (df['Heure'] == str(heure_rdv))):
+        return False
+    return True
+
+# Fonction pour enregistrer un rendez-vous dans le CSV
+def enregistrer_rdv(nom, prenom, date_rdv, heure_rdv):
+    # Ouvrir (ou créer si nécessaire) un fichier CSV pour stocker les rendez-vous
+    try:
+        df = pd.read_csv("rendezvous.csv")
+    except FileNotFoundError:
+        df = pd.DataFrame(columns=["Nom", "Prénom", "Date", "Heure"])
+    
+    # Ajouter le nouveau rendez-vous
+    df = df.append({"Nom": nom, "Prénom": prenom, "Date": date_rdv, "Heure": heure_rdv}, ignore_index=True)
+    df.to_csv("rendezvous.csv", index=False)
+
+# Page pour prendre un rendez-vous
+if page == "📅 Prendre un rendez-vous":
+    st.title("📅 Prendre un rendez-vous")
+    
+    # Champs de formulaire pour le rendez-vous
+    nom = st.text_input("Nom")
+    prenom = st.text_input("Prénom")
+    
+    # Sélectionner la date et l'heure du rendez-vous
+    date_rdv = st.date_input("Choisissez une date pour votre rendez-vous", min_value=datetime.date.today())
+    heure_rdv = st.time_input("Choisissez une heure pour votre rendez-vous", value=datetime.time(9, 0))
+    
+    # Vérifier la disponibilité
+    if not est_disponible(date_rdv, heure_rdv):
+        st.error("Désolé, cette date et heure sont déjà réservées. Veuillez choisir une autre horaire.")
+    else:
+        # Bouton de soumission
+        submit_button = st.button("Confirmer le rendez-vous")
+        
+        if submit_button:
+            # Enregistrer le rendez-vous
+            enregistrer_rdv(nom, prenom, date_rdv, heure_rdv)
+            st.success(f"Rendez-vous confirmé pour le {date_rdv} à {heure_rdv}.")
 
  
 
