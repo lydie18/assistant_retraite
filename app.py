@@ -86,7 +86,7 @@ def enregistrer_rdv(nom, prenom, date_rdv, heure_rdv):
     df.to_csv("rendezvous.csv", index=False)
 
 # Page pour prendre un rendez-vous
-if page == "📅 Prendre un rendez-vous":
+if page == ("📅 Prendre un rendez-vous":
     st.title("📅 Prendre un rendez-vous")
     
     # Champs de formulaire pour le rendez-vous
