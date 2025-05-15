@@ -213,6 +213,79 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True
+import streamlit as st
+
+# Fonction du tableau de bord
+def dashboard_section():
+    st.title("Tableau de Bord - Retraite")
+    st.subheader("Informations essentielles pour démarrer votre dossier retraite")
+
+    # Ajouter des sections interactives avec des boutons
+    menu = ["Conditions Générales", "Documents à préparer", "Étapes à suivre", "Conseils pratiques", "Échéances importantes"]
+    choice = st.radio("Choisissez une rubrique", menu)
+
+    if choice == "Conditions Générales":
+        show_conditions()
+
+    elif choice == "Documents à préparer":
+        show_documents()
+
+    elif choice == "Étapes à suivre":
+        show_steps()
+
+    elif choice == "Conseils pratiques":
+        show_tips()
+
+    elif choice == "Échéances importantes":
+        show_deadlines()
+
+# Sections de contenu
+def show_conditions():
+    st.header("Conditions Générales")
+    st.write("""
+        Pour pouvoir faire une demande de retraite, voici les critères essentiels :
+        - **Âge minimum** : 62 ans pour la retraite de base.
+        - **Durée de cotisation** : minimum 166 trimestres.
+    """)
+
+def show_documents():
+    st.header("Documents à préparer")
+    st.write("""
+        Avant de commencer votre demande de retraite, voici les documents à rassembler :
+        - **Carte d'identité ou passeport**
+        - **Justificatifs de vos périodes d'activité professionnelle**
+    """)
+
+def show_steps():
+    st.header("Étapes à suivre")
+    st.write("""
+        Voici les grandes étapes pour demander votre retraite :
+        1. **Préparer vos documents**
+        2. **Calculer votre retraite**
+        3. **Faire votre demande**
+        4. **Envoyer les pièces justificatives**
+    """)
+
+def show_tips():
+    st.header("Conseils pratiques")
+    st.write("""
+        Quelques conseils pour éviter les erreurs fréquentes :
+        - **Vérifiez vos trimestres cotisés**
+        - **Anticipez votre demande**
+    """)
+
+def show_deadlines():
+    st.header("Échéances importantes")
+    st.write("""
+        Assurez-vous de respecter ces dates importantes :
+        - **6 mois avant la retraite** : Déposez votre demande.
+    """)
+
+# Créer un bouton pour afficher le tableau de bord
+if st.button("Accéder au Tableau de Bord"):
+    dashboard_section()
+else:
+    st.write("Bienvenue sur l'application de gestion de la retraite.")
 
 
 
