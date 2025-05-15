@@ -124,6 +124,11 @@ def load_css(file):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css("styles.css")  # Appliquer le CSS
+def load_css(file):
+    with open(file) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles.css")
 
 
 
