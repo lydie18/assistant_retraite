@@ -112,6 +112,48 @@ if page == "📅 Prendre un rendez-vous":
             # Enregistrer le rendez-vous
             enregistrer_rdv(nom, prenom, date_rdv, heure_rdv)
             st.success(f"Rendez-vous confirmé pour le {date_rdv} à {heure_rdv}.")
+import streamlit as st
+
+# Charger le CSS personnalisé (si tu as un fichier styles.css)
+def load_css(file):
+    with open(file) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Appel pour charger le CSS (s'il existe)
+load_css("styles.css")
+
+# Titre principal de l'application
+st.title("Assistant Retraite 🧓")
+
+# Barre latérale avec une image
+st.sidebar.image("logo.png", width=120)
+st.sidebar.title("Menu")
+st.sidebar.markdown("- Estimation")
+st.sidebar.markdown("- Contact")
+st.sidebar.markdown("- Aide")
+
+# Layout avec des colonnes pour afficher le logo et un texte d'introduction
+col1, col2 = st.columns([1, 2])
+with col1:
+    st.image("logo.png", width=100)  # Remplace 'logo.png' par le chemin vers ton logo
+with col2:
+    st.subheader("Bienvenue sur votre simulateur de retraite !")
+    st.markdown("Ce service vous aide à estimer votre future pension de manière simple et rapide.")
+
+# Formulaire avec les informations utilisateur
+st.header("💼 Vos informations")
+nom = st.text_input("Nom")
+age = st.slider("Âge actuel", 18, 67, 45)
+revenu = st.number_input("Revenu annuel brut (€)", min_value=0)
+
+# Calcul de la pension de retraite
+if st.button("Estimer ma retraite"):
+    pension = revenu * 0.5  # Calcul simplifié de la pension
+    st.success(f"Bonjour {nom}, votre pension estimée est de **{pension:.2f} €** par an.")
+
+# Footer
+st.markdown("---")
+st.markdown("© 2025 Assistant Retraite")
 
  
 
