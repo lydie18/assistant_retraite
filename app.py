@@ -138,7 +138,7 @@ st.markdown(
     """
     <div class="banniere-custom">
         <div class="logo-part">
-            <img src="https://www.canva.com/design/DAGngwY1BsU/biqGQF3SPXW2hpsLYwMaDQ/edit?utm_content=DAGngwY1BsU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+            <img src="a.png">
         </div>
         <div class="text-part">
             <h1>Assistant Retraite 🧓</h1>
