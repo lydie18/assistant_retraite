@@ -143,7 +143,7 @@ import streamlit as st
 
 menu = ["Accueil", "Tableau de bord", "mémos"]
 choix = st.sidebar.selectbox("Navigation", menu)
-
+dashboard_section()
 if choix == "Tableau de bord":
     dashboard_section()
 else:
