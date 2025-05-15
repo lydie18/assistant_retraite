@@ -1,0 +1,16 @@
+h1, h2, h3 {
+    color: #FF4B4B;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+button {
+    background-color: #FF4B4B !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none;
+}
+
+.block-container {
+    padding-top: 2rem;
+}
