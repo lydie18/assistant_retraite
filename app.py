@@ -1,6 +1,36 @@
 import streamlit as st
 import csv
 import pandas as pd
+import streamlit as st
+from PIL import Image
+
+# Configuration de la page (doit être tout en haut)
+st.set_page_config(
+    page_title="Accompagnement Retraite",
+    page_icon="🧓",
+    layout="centered"
+)
+
+# Chargement du logo (assure-toi que le fichier A.png est au bon endroit)
+logo = Image.open("A.png")  # ou "images/A.png" si le logo est dans un sous-dossier
+
+# Barre latérale avec logo et titre
+st.sidebar.image(logo, width=150)
+st.sidebar.markdown("## Assistant Retraite")
+st.sidebar.markdown("---")
+st.sidebar.markdown("Bienvenue dans votre espace d'accompagnement pour la retraite.")
+
+# Contenu principal
+st.title("🎯 Bienvenue sur l’Assistant Retraite")
+st.write("""
+Cet outil vous accompagne pour :
+- simuler votre départ à la retraite
+- estimer vos droits
+- suivre vos démarches
+- poser vos questions
+
+Commencez en choisissant une action dans le menu à gauche.
+""")
 
 # Page principale
 st.title("Bienvenue sur l’assistant retraite")
