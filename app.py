@@ -5,8 +5,8 @@ import streamlit as st
 from PIL import Image
 
 # === LOGO DANS LA BARRE LATÉRALE ===
-logo = Image.open("logo = Image.open("images/A.png")
-")        # ton fichier logo doit être dans le même dossier
+logo = Image.open("images/A.png")
+ # ton fichier logo doit être dans le même dossier
 st.sidebar.image(logo, width=150) # affichage dans la sidebar
 st.sidebar.markdown("## Assistant Retraite")  # texte optionnel
 
