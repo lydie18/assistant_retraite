@@ -147,19 +147,6 @@ if st.button("Estimer ma retraite"):
     pension = revenu * 0.5  # Calcul simplifié
     st.success(f"Bonjour {nom}, votre pension estimée est de **{pension:.2f} €** par an.")
 
-# Footer
-st.markdown("---")
-st.markdown("© 2025 Assistant Retraite")
-/* Définir l'image de fond */
-body {
-    background-image: url(https://www.canva.com/design/DAGngWCAvkM/oSljc6pVx1Ktpq7Betr45g/edit?utm_content=DAGngWCAvkM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton); /* Remplace par le chemin de ton image */
-    background-size: cover;  /* L'image couvre toute la page */
-    background-position: center center;  /* Centrer l'image */
-    background-attachment: fixed;  /* L'image reste fixe quand on scroll */
-}
 
-/* Optionnel : Modifier la couleur de fond si l'image ne se charge pas */
-.block-container {
-    background-color: #f5f5f5;  /* Gris clair par exemple */
 }
 
