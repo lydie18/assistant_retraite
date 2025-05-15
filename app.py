@@ -11,8 +11,8 @@ st.set_page_config(
     layout="centered"
 )
 
-# Chargement du logo (assure-toi que le fichier A.png est au bon endroit)
-logo = Image.open("A.png")  # ou "images/A.png" si le logo est dans un sous-dossier
+# Chargement du logo 
+logo = Image.open("images/A.png") 
 
 # Barre latérale avec logo et titre
 st.sidebar.image(logo, width=150)
