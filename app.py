@@ -143,6 +143,83 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+import streamlit as st
+
+def dashboard_section():
+    st.title("Tableau de Bord - Retraite")
+
+    st.subheader("Informations essentielles pour démarrer votre dossier retraite")
+
+    # Ajouter des sections interactives avec des boutons
+    menu = ["Conditions Générales", "Documents à préparer", "Étapes à suivre", "Conseils pratiques", "Échéances importantes"]
+    choice = st.radio("Choisissez une rubrique", menu)
+
+    if choice == "Conditions Générales":
+        show_conditions()
+
+    elif choice == "Documents à préparer":
+        show_documents()
+
+    elif choice == "Étapes à suivre":
+        show_steps()
+
+    elif choice == "Conseils pratiques":
+        show_tips()
+
+    elif choice == "Échéances importantes":
+        show_deadlines()
+
+# Sections de contenu
+def show_conditions():
+    st.header("Conditions Générales")
+    st.write("""
+        Pour pouvoir faire une demande de retraite, voici les critères essentiels :
+        - **Âge minimum** : 62 ans pour la retraite de base (en fonction de l'année de naissance).
+        - **Durée de cotisation** : minimum 166 trimestres.
+        - **Autres critères** : être assuré dans le régime général de la sécurité sociale, etc.
+    """)
+
+def show_documents():
+    st.header("Documents à préparer")
+    st.write("""
+        Avant de commencer votre demande de retraite, voici les documents à rassembler :
+        - **Carte d'identité ou passeport**
+        - **Justificatifs de vos périodes d'activité professionnelle** (attestations, bulletins de salaire, etc.)
+        - **RIB pour le versement de la pension**
+        - **Livret de famille** (en cas de situation particulière)
+    """)
+
+def show_steps():
+    st.header("Étapes à suivre")
+    st.write("""
+        Voici les grandes étapes pour demander votre retraite :
+        1. **Préparer vos documents** : Rassemblez les documents nécessaires.
+        2. **Calculer votre retraite** : Estimez votre montant de pension.
+        3. **Faire votre demande** : Remplir le formulaire de demande de retraite en ligne.
+        4. **Envoyer les pièces justificatives** : Envoyez les documents demandés à la caisse de retraite.
+        5. **Suivi de votre dossier** : Vérifiez l’avancement de votre dossier.
+    """)
+
+def show_tips():
+    st.header("Conseils pratiques")
+    st.write("""
+        Quelques conseils pour éviter les erreurs fréquentes :
+        - **Vérifiez vos trimestres cotisés** : Assurez-vous que toutes vos périodes de travail sont bien prises en compte.
+        - **Anticipez votre demande** : Déposez votre dossier 6 mois avant votre date de départ prévue.
+        - **Optimisez votre pension** : Vérifiez vos options de rachat de trimestres si nécessaire.
+    """)
+
+def show_deadlines():
+    st.header("Échéances importantes")
+    st.write("""
+        Assurez-vous de respecter ces dates importantes :
+        - **6 mois avant la retraite** : Déposez votre demande pour garantir une transition en douceur.
+        - **1 an avant la retraite** : Commencez à vérifier vos droits et la durée de cotisation.
+        - **Date de départ prévue** : La retraite commence à la date indiquée.
+    """)
+
+# Affichage du tableau de bord
+dashboard_section()
 
 
 
