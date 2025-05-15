@@ -99,6 +99,22 @@ hr {
     height: 1px;
     background-color: #FFCC80;
 }
+/* Fond général de l'application */
+[data-testid="stAppViewContainer"] {
+    background-color: #FFF3E0; /* Orange clair pastel */
+}
+
+/* Conteneur principal (où est le contenu) */
+[data-testid="stAppViewBlockContainer"] {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Barre latérale */
+section[data-testid="stSidebar"] {
+    background-color: #FFE0B2 !important;
+}
 
 
 
