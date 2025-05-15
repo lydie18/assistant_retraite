@@ -143,7 +143,7 @@ menu = ["Accueil", "Tableau de bord", "mémos"]
 choix = st.sidebar.selectbox("Navigation", menu)
 def dashboard_section():
 if choix == "Tableau de bord":
-    dashboard_section()
+   
 else:
     st.write("Bienvenue dans votre application !")
 
