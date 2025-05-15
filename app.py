@@ -115,4 +115,7 @@ if page == "📅 Prendre un rendez-vous":
 st.title("Assistant Retraite 🧓")
 st.header("Bienvenue sur le simulateur de retraite !")
 st.subheader("Estimez votre pension avec simplicité")
+if st.button("Estimer ma retraite"):
+    pension = revenu * 0.5  # Calcul simplifié
+    st.success(f"Bonjour {nom}, votre pension estimée est de **{pension:.2f} €** par an.")
 
