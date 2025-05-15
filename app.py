@@ -138,10 +138,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 import streamlit as st
-def dashboard_section():
+
 menu = ["Accueil", "Tableau de bord", "mémos"]
 choix = st.sidebar.selectbox("Navigation", menu)
-dashboard_section()
+def dashboard_section():
 if choix == "Tableau de bord":
     dashboard_section()
 else:
