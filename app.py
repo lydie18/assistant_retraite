@@ -145,9 +145,7 @@ def dashboard_section():
     if choix == "Tableau de bord":
         st.subheader("📊 Tableau de bord")
         st.write("Bienvenue dans votre tableau de bord.")
-
-   
-else:
+    else:
     st.write("Bienvenue dans votre application !")
 
 def dashboard_section():
