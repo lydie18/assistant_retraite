@@ -142,7 +142,10 @@ import streamlit as st
 menu = ["Accueil", "Tableau de bord", "mémos"]
 choix = st.sidebar.selectbox("Navigation", menu)
 def dashboard_section():
-if choix == "Tableau de bord":
+    if choix == "Tableau de bord":
+        st.subheader("📊 Tableau de bord")
+        st.write("Bienvenue dans votre tableau de bord.")
+
    
 else:
     st.write("Bienvenue dans votre application !")
