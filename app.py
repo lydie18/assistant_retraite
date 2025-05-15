@@ -141,7 +141,7 @@ st.markdown(
 )
 import streamlit as st
 
-menu = ["Accueil", "Tableau de bord", "Autre fonctionnalité"]
+menu = ["Accueil", "Tableau de bord", "mémos"]
 choix = st.sidebar.selectbox("Navigation", menu)
 
 if choix == "Tableau de bord":
@@ -186,7 +186,7 @@ def show_documents():
     st.write("""
         Avant de commencer votre demande de retraite, voici les documents à rassembler :
         - **Carte d'identité ou passeport**
-        - **Justificatifs de vos périodes d'activité professionnelle**
+        - **Justificatifs de vos périodes travaillées**
     """)
 
 def show_steps():
@@ -211,7 +211,7 @@ def show_deadlines():
     st.header("Échéances importantes")
     st.write("""
         Assurez-vous de respecter ces dates importantes :
-        - **6 mois avant la retraite** : Déposez votre demande.
+        - **5 mois avant la retraite** : Déposez votre demande.
     """)
 
 
