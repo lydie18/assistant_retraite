@@ -1,11 +1,6 @@
 import streamlit as st
 import csv
 import pandas as pd
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css("styles.css")
 
 # Configuration de la page
 st.set_page_config(
