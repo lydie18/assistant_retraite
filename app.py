@@ -115,10 +115,4 @@ if page == "📅 Prendre un rendez-vous":
 st.title("Assistant Retraite 🧓")
 st.header("Bienvenue sur le simulateur de retraite !")
 st.subheader("Estimez votre pension avec simplicité")
-# Création de colonnes pour mieux organiser l'affichage
-col1, col2 = st.columns([1, 2])  # Première colonne plus étroite que la deuxième
-with col1:
-    st.image("logo.png", width=100)  # Affichage de l'image (logo)
-with col2:
-    st.subheader("Bienvenue sur votre simulateur de retraite !")
-    st.markdown("Ce service vous aide à estimer votre future pension.")
+
