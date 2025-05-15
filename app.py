@@ -128,24 +128,7 @@ load_css("styles.css")  # Appliquer le CSS
 # Titre principal
 st.title("Assistant Retraite 🧓")
 
-# Disposition avec colonnes
-col1, col2 = st.columns([1, 2])
-with col1:
-    st.image("logo.png", width=100)  # Remplacer par ton logo
-with col2:
-    st.subheader("Bienvenue sur votre simulateur de retraite !")
-    st.markdown("Ce service vous aide à estimer votre future pension de manière simple et rapide.")
 
-# Formulaire de collecte d'informations
-st.header("💼 Vos informations")
-nom = st.text_input("Nom")
-age = st.slider("Âge actuel", 18, 67, 45)
-revenu = st.number_input("Revenu annuel brut (€)", min_value=0)
-
-# Estimation de la retraite
-if st.button("Estimer ma retraite"):
-    pension = revenu * 0.5  # Calcul simplifié
-    st.success(f"Bonjour {nom}, votre pension estimée est de **{pension:.2f} €** par an.")
 
 
 
