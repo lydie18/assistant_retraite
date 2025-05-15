@@ -223,6 +223,15 @@ def show_deadlines():
 dashboard_section()
 # Affiche le tableau de bord
 dashboard_section()
+# Ajouter un menu de navigation dans la barre latérale
+menu = ["Accueil", "Tableau de bord", "Autre fonctionnalité"]
+choix = st.sidebar.selectbox("Navigation", menu)
+
+# Afficher le tableau de bord si l'utilisateur sélectionne "Tableau de bord"
+if choix == "Tableau de bord":
+    dashboard_section()
+else:
+    st.write("Bienvenue dans votre application !")
 
 
 
