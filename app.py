@@ -129,25 +129,22 @@ def load_css(file):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css("styles.css")
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css("styles.css")
 st.markdown(
     """
     <div class="banniere-custom">
         <div class="logo-part">
-            <img src="a.png">
+            <img src="assets/logo.png" width="60">
         </div>
         <div class="text-part">
             <h1>Assistant Retraite 🧓</h1>
-            <p>Estimez votre pension simplement et rapidement.</p>
+            <p>Simulez votre pension simplement</p>
         </div>
     </div>
     """,
     unsafe_allow_html=True
 )
+
+
 
 
 
