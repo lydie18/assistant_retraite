@@ -1,6 +1,17 @@
 import streamlit as st
 import csv
 import pandas as pd
+import streamlit as st
+from PIL import Image
+
+# === LOGO DANS LA BARRE LATÉRALE ===
+logo = Image.open("A.png")        # ton fichier logo doit être dans le même dossier
+st.sidebar.image(logo, width=150) # affichage dans la sidebar
+st.sidebar.markdown("## Assistant Retraite")  # texte optionnel
+
+# === CONTENU PRINCIPAL ===
+st.title("Bienvenue sur l'assistant retraite")
+st.write("Voici votre espace pour simuler, suivre et optimiser votre retraite.")
 
 # Configuration de la page
 st.set_page_config (page_title="Accompagnement Retraite", page_icon="🧓",layout="centered")
