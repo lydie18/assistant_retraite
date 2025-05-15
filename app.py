@@ -134,6 +134,20 @@ def load_css(file):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css("styles.css")
+st.markdown(
+    """
+    <div class="banniere-custom">
+        <div class="logo-part">
+            <img src="https://www.canva.com/design/DAGngwY1BsU/biqGQF3SPXW2hpsLYwMaDQ/edit?utm_content=DAGngwY1BsU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+        </div>
+        <div class="text-part">
+            <h1>Assistant Retraite 🧓</h1>
+            <p>Estimez votre pension simplement et rapidement.</p>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
