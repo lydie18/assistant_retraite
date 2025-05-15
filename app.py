@@ -4,15 +4,14 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
-# Configuration de la page (doit être tout en haut)
+# Configuration de la page 
 st.set_page_config(
     page_title="Accompagnement Retraite",
     page_icon="🧓",
     layout="centered"
 )
 
-# Chargement du logo 
-logo = Image.open("images/A.png") 
+ 
 
 # Barre latérale avec logo et titre
 st.sidebar.image(logo, width=150)
