@@ -14,7 +14,7 @@ st.set_page_config(
  
 
 # Barre latérale avec logo et titre
-st.sidebar.image(logo, width=150)
+
 st.sidebar.markdown("## Assistant Retraite")
 st.sidebar.markdown("---")
 st.sidebar.markdown("Bienvenue dans votre espace d'accompagnement pour la retraite.")
