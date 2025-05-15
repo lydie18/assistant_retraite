@@ -3,11 +3,7 @@ import csv
 import pandas as pd
 
 # Configuration de la page
-st.set_page_config(
-    page_title="Accompagnement Retraite",
-    page_icon="🧓",
-    layout="centered"
-)
+st.set_page_config (page_title="Accompagnement Retraite", page_icon="🧓",layout="centered")
 
 # Barre latérale pour la navigation
 st.sidebar.title("Navigation")
