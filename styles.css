@@ -37,6 +37,17 @@ hr {
     height: 1px;
     background-color: #FFCC80;
 }
+/* Fond de toute la page en orange très clair */
+html, body {
+    background-color: #FFF3E0; /* Couleur orange clair pastel */
+}
+
+/* Conteneur principal : fond blanc pour bien détacher le contenu */
+.block-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
 
 
 
