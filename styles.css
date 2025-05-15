@@ -144,6 +144,30 @@ section[data-testid="stSidebar"] {
     font-size: 16px;
     color: #fffde7;
 }
+.banniere-custom {
+    display: flex;
+    align-items: center;
+    background-color: #FFA726;
+    border-radius: 10px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.logo-part {
+    margin-right: 20px;
+}
+
+.text-part h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.text-part p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #fffde7;
+}
 
 
 
