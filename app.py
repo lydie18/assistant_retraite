@@ -145,6 +145,7 @@ st.markdown(
 )
 import streamlit as st
 
+# Fonction de création du tableau de bord
 def dashboard_section():
     st.title("Tableau de Bord - Retraite")
 
@@ -169,7 +170,7 @@ def dashboard_section():
     elif choice == "Échéances importantes":
         show_deadlines()
 
-# Sections de contenu
+# Sections de contenu pour chaque rubrique
 def show_conditions():
     st.header("Conditions Générales")
     st.write("""
@@ -218,8 +219,11 @@ def show_deadlines():
         - **Date de départ prévue** : La retraite commence à la date indiquée.
     """)
 
-# Affichage du tableau de bord
+# Appel du tableau de bord
 dashboard_section()
+# Affiche le tableau de bord
+dashboard_section()
+
 
 
 
