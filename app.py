@@ -149,6 +149,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+<img src="assets/logo.png" width="60">
 
 
 
