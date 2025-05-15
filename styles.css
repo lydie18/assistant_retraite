@@ -1,0 +1,30 @@
+/* Fond de page avec une image */
+body {
+    background-image: url(https://www.canva.com/design/DAGngWCAvkM/oSljc6pVx1Ktpq7Betr45g/edit?utm_content=DAGngWCAvkM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton);  /* Remplace par ton chemin */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;  /* Texte blanc */
+}
+
+/* Conteneur principal avec fond blanc */
+.block-container {
+    background-color: rgba(255, 255, 255, 0.8);  /* Fond blanc semi-transparent */
+    padding: 20px;
+}
+
+/* Titres */
+h1, h2, h3 {
+    color: #FF4B4B;  /* Rouge pour les titres */
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+/* Boutons */
+button {
+    background-color: #FF4B4B !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none;
+}
+
