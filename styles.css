@@ -115,6 +115,35 @@ hr {
 section[data-testid="stSidebar"] {
     background-color: #FFE0B2 !important;
 }
+.banniere-custom {
+    display: flex;
+    align-items: center;
+    background-color: #FFA726;
+    border-radius: 10px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.banniere-custom .logo-part {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.banniere-custom .text-part {
+    flex: 1;
+}
+
+.banniere-custom h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.banniere-custom p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #fffde7;
+}
 
 
 
