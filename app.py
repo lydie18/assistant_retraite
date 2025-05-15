@@ -165,7 +165,7 @@ def dashboard_section():
     elif choice == "Échéances importantes":
         show_deadlines()
 
-# Section "Conditions Générales"
+# Sections de contenu
 def show_conditions():
     st.header("Conditions Générales")
     st.write("""
@@ -174,7 +174,6 @@ def show_conditions():
         - **Durée de cotisation** : minimum 166 trimestres.
     """)
 
-# Section "Documents à préparer"
 def show_documents():
     st.header("Documents à préparer")
     st.write("""
@@ -183,7 +182,6 @@ def show_documents():
         - **Justificatifs de vos périodes d'activité professionnelle**
     """)
 
-# Section "Étapes à suivre"
 def show_steps():
     st.header("Étapes à suivre")
     st.write("""
@@ -194,7 +192,6 @@ def show_steps():
         4. **Envoyer les pièces justificatives**
     """)
 
-# Section "Conseils pratiques"
 def show_tips():
     st.header("Conseils pratiques")
     st.write("""
@@ -203,7 +200,6 @@ def show_tips():
         - **Anticipez votre demande**
     """)
 
-# Section "Échéances importantes"
 def show_deadlines():
     st.header("Échéances importantes")
     st.write("""
@@ -216,6 +212,7 @@ if st.button("Accéder au Tableau de Bord"):
     dashboard_section()
 else:
     st.write("Bienvenue sur l'application de gestion de la retraite.")
+
 
 
 
