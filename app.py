@@ -112,3 +112,6 @@ if page == "📅 Prendre un rendez-vous":
             # Enregistrer le rendez-vous
             enregistrer_rdv(nom, prenom, date_rdv, heure_rdv)
             st.success(f"Rendez-vous confirmé pour le {date_rdv} à {heure_rdv}.")
+st.title("Assistant Retraite 🧓")
+st.header("Bienvenue sur le simulateur de retraite !")
+st.subheader("Estimez votre pension avec simplicité")
