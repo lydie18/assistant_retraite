@@ -125,8 +125,7 @@ def load_css(file):
 
 load_css("styles.css")  # Appliquer le CSS
 
-# Titre principal
-st.title("Assistant Retraite 🧓")
+
 
 
 
