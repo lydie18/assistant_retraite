@@ -4,11 +4,15 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
-# === LOGO DANS LA BARRE LATÉRALE ===
-logo = Image.open("images/A.png")
- # ton fichier logo doit être dans le même dossier
-st.sidebar.image(logo, width=150) # affichage dans la sidebar
-st.sidebar.markdown("## Assistant Retraite")  # texte optionnel
+# Charger et afficher le logo dans la barre latérale
+logo = Image.open("Images/A.png")  # ou "images/A.png" si c’est dans un sous-dossier
+st.sidebar.image(logo, width=150)
+st.sidebar.markdown("## Assistant Retraite")
+
+# Page principale
+st.title("Bienvenue sur l’assistant retraite")
+st.write("Voici votre outil pour simuler et gérer votre retraite.")
+
 
 # === CONTENU PRINCIPAL ===
 st.title("Bienvenue sur l'assistant retraite")
