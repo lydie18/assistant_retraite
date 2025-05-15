@@ -139,79 +139,93 @@ st.markdown(
 )
 import streamlit as st
 
-menu = ["Accueil", "Tableau de bord", "mémos"]
-choix = st.sidebar.selectbox("Navigation", menu)
-def dashboard_section():
-    if choix == "Tableau de bord":
-        st.subheader("📊 Tableau de bord")
-        st.write("Bienvenue dans votre tableau de bord.")
-    else:
-    st.write("Bienvenue dans votre application !")
+# Configuration de la page
+st.set_page_config(page_title="Assistant Retraite", page_icon="🧓", layout="centered")
 
+# Menu de navigation
+menu = ["Accueil", "Tableau de bord", "Mémos"]
+choix = st.sidebar.selectbox("Navigation", menu)
+
+# Affichage de la section selon le choix
+if choix == "Accueil":
+    st.title("🏠 Accueil")
+    st.write("Bienvenue dans votre application de préparation à la retraite.")
+
+elif choix == "Tableau de bord":
+    dashboard_section()
+
+elif choix == "Mémos":
+    st.title("📝 Mémos")
+    st.write("Section Mémos à venir...")
+
+# Fonction Tableau de bord
 def dashboard_section():
-    st.title("Tableau de Bord - Retraite")
+    st.title("📊 Tableau de Bord - Retraite")
     st.subheader("Informations essentielles pour démarrer votre dossier retraite")
 
-    # Ajouter des sections interactives avec des boutons
-    menu = ["Conditions Générales", "Documents à préparer", "Étapes à suivre", "Conseils pratiques", "Échéances importantes"]
-    choice = st.radio("Choisissez une rubrique", menu)
+    # Menu radio interactif
+    sous_menu = [
+        "Conditions Générales", 
+        "Documents à préparer", 
+        "Étapes à suivre", 
+        "Conseils pratiques", 
+        "Échéances importantes"
+    ]
+    choix_sous_menu = st.radio("Choisissez une rubrique :", sous_menu)
 
-    if choice == "Conditions Générales":
+    if choix_sous_menu == "Conditions Générales":
         show_conditions()
-
-    elif choice == "Documents à préparer":
+    elif choix_sous_menu == "Documents à préparer":
         show_documents()
-
-    elif choice == "Étapes à suivre":
+    elif choix_sous_menu == "Étapes à suivre":
         show_steps()
-
-    elif choice == "Conseils pratiques":
+    elif choix_sous_menu == "Conseils pratiques":
         show_tips()
-
-    elif choice == "Échéances importantes":
+    elif choix_sous_menu == "Échéances importantes":
         show_deadlines()
 
-# Sections de contenu
+# Fonctions pour chaque rubrique
 def show_conditions():
-    st.header("Conditions Générales")
+    st.header("📌 Conditions Générales")
     st.write("""
-        Pour pouvoir faire une demande de retraite, voici les critères essentiels :
-        - **Âge minimum** : 62 ans pour la retraite de base.
-        - **Durée de cotisation** : minimum 166 trimestres.
+    Pour pouvoir faire une demande de retraite, voici les critères essentiels :
+    - **Âge minimum** : 62 ans pour la retraite de base.
+    - **Durée de cotisation** : minimum 166 trimestres.
     """)
 
 def show_documents():
-    st.header("Documents à préparer")
+    st.header("📁 Documents à préparer")
     st.write("""
-        Avant de commencer votre demande de retraite, voici les documents à rassembler :
-        - **Carte d'identité ou passeport**
-        - **Justificatifs de vos périodes travaillées**
+    Avant de commencer votre demande de retraite, voici les documents à rassembler :
+    - **Carte d'identité ou passeport**
+    - **Justificatifs de vos périodes travaillées**
     """)
 
 def show_steps():
-    st.header("Étapes à suivre")
+    st.header("🧭 Étapes à suivre")
     st.write("""
-        Voici les grandes étapes pour demander votre retraite :
-        1. **Préparer vos documents**
-        2. **Calculer votre retraite**
-        3. **Faire votre demande**
-        4. **Envoyer les pièces justificatives**
+    Voici les grandes étapes pour demander votre retraite :
+    1. **Préparer vos documents**
+    2. **Calculer votre retraite**
+    3. **Faire votre demande**
+    4. **Envoyer les pièces justificatives**
     """)
 
 def show_tips():
-    st.header("Conseils pratiques")
+    st.header("💡 Conseils pratiques")
     st.write("""
-        Quelques conseils pour éviter les erreurs fréquentes :
-        - **Vérifiez vos trimestres cotisés**
-        - **Anticipez votre demande**
+    Quelques conseils pour éviter les erreurs fréquentes :
+    - **Vérifiez vos trimestres cotisés**
+    - **Anticipez votre demande**
     """)
 
 def show_deadlines():
-    st.header("Échéances importantes")
+    st.header("⏰ Échéances importantes")
     st.write("""
-        Assurez-vous de respecter ces dates importantes :
-        - **5 mois avant la retraite** : Déposez votre demande.
+    Assurez-vous de respecter ces dates importantes :
+    - **5 mois avant la retraite** : Déposez votre demande.
     """)
+
 
 
 
