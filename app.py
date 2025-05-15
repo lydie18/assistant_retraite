@@ -115,43 +115,9 @@ if page == "📅 Prendre un rendez-vous":
 st.title("Assistant Retraite 🧓")
 st.header("Bienvenue sur le simulateur de retraite !")
 st.subheader("Estimez votre pension avec simplicité")
-
 import streamlit as st
 
-# Charger le CSS personnalisé
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css("styles.css")  # Appliquer le CSS
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css("styles.css")
-st.markdown(
-    """
-    <div class="banniere-custom">
-        <div class="logo-part">
-            <img src="assets/logo.png" width="60">
-        </div>
-        <div class="text-part">
-            <h1>Assistant Retraite 🧓</h1>
-            <p>Simulez votre pension simplement</p>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-import streamlit as st
-
-menu = ["Accueil", "Tableau de bord", "Autre fonctionnalité"]
-choix = st.sidebar.selectbox("Navigation", menu)
-
-if choix == "Tableau de bord":
-    dashboard_section()
-else:
-    st.write("Bienvenue dans votre application !")
-
+# Fonction du tableau de bord
 def dashboard_section():
     st.title("Tableau de Bord - Retraite")
     st.subheader("Informations essentielles pour démarrer votre dossier retraite")
@@ -216,6 +182,38 @@ def show_deadlines():
         Assurez-vous de respecter ces dates importantes :
         - **6 mois avant la retraite** : Déposez votre demande.
     """)
+
+# Appel du tableau de bord
+if __name__ == "__main__":
+    dashboard_section()
+
+import streamlit as st
+
+# Charger le CSS personnalisé
+def load_css(file):
+    with open(file) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles.css")  # Appliquer le CSS
+def load_css(file):
+    with open(file) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css("styles.css")
+st.markdown(
+    """
+    <div class="banniere-custom">
+        <div class="logo-part">
+            <img src="assets/logo.png" width="60">
+        </div>
+        <div class="text-part">
+            <h1>Assistant Retraite 🧓</h1>
+            <p>Simulez votre pension simplement</p>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+
 
 
 
