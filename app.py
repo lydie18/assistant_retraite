@@ -1,47 +1,94 @@
+
 import streamlit as st
-import base64
-import datetime
 import pandas as pd
 import csv
+import datetime
+from PIL import Image
 
-# --- Configuration de la page ---
+# --- Configuration de la page (TOUT EN PREMIER) ---
 st.set_page_config(
     page_title="Assistant Retraite",
     page_icon="🧓",
     layout="centered"
 )
 
+# --- Chargement CSS personnalisé (optionnel) ---
+def load_css(file):
+    try:
+        with open(file) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except FileNotFoundError:
+        pass
 
-try:
-    load_css("styles.css")
-except FileNotFoundError:
-    pass
+load_css("styles.css")
 
-# --- Affichage bannière HTML ---
-st.markdown(
-    """
-    <div class="banniere-custom">
-        <div class="logo-part">
-            <img src="assets/logo.png" width="60">
-        </div>
-        <div class="text-part">
-            <h1>Assistant Retraite 🧓</h1>
-            <p>Simulez votre pension simplement</p>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# --- Fonctions pour le tableau de bord ---
+def show_conditions():
+    st.header("📌 Conditions Générales")
+    st.write("""
+    Pour pouvoir faire une demande de retraite, voici les critères essentiels :
+    - **Âge minimum** : 62 ans pour la retraite de base.
+    - **Durée de cotisation** : minimum 166 trimestres.
+    """)
 
-# --- Barre latérale Navigation ---
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Aller vers :", [
-    "🏠 Accueil",
-    "📄 Formulaire retraite",
-    "📊 Voir les demandes",
-    "📅 Prendre un rendez-vous"
-])
+def show_documents():
+    st.header("📁 Documents à préparer")
+    st.write("""
+    Avant de commencer votre demande de retraite, voici les documents à rassembler :
+    - **Carte d'identité ou passeport**
+    - **Justificatifs de vos périodes travaillées**
+    """)
 
+def show_steps():
+    st.header("🧭 Étapes à suivre")
+    st.write("""
+    Voici les grandes étapes pour demander votre retraite :
+    1. **Préparer vos documents**
+    2. **Calculer votre retraite**
+    3. **Faire votre demande**
+    4. **Envoyer les pièces justificatives**
+    """)
+
+def show_tips():
+    st.header("💡 Conseils pratiques")
+    st.write("""
+    Quelques conseils pour éviter les erreurs fréquentes :
+    - **Vérifiez vos trimestres cotisés**
+    - **Anticipez votre demande**
+    """)
+
+def show_deadlines():
+    st.header("⏰ Échéances importantes")
+    st.write("""
+    Assurez-vous de respecter ces dates importantes :
+    - **5 mois avant la retraite** : Déposez votre demande.
+    """)
+
+def dashboard_section():
+    st.title("📊 Tableau de Bord - Retraite")
+    st.subheader("Informations essentielles pour démarrer votre dossier retraite")
+
+    sous_menu = [
+        "Conditions Générales", 
+        "Documents à préparer", 
+        "Étapes à suivre", 
+        "Conseils pratiques", 
+        "Échéances importantes"
+    ]
+    choix_sous_menu = st.radio("Choisissez une rubrique :", sous_menu)
+
+    if choix_sous_menu == "Conditions Générales":
+        show_conditions()
+    elif choix_sous_menu == "Documents à préparer":
+        show_documents()
+    elif choix_sous_menu == "Étapes à suivre":
+        show_steps()
+    elif choix_sous_menu == "Conseils pratiques":
+        show_tips()
+    elif choix_sous_menu == "Échéances importantes":
+        show_deadlines()
+
+# --- Fonctions pour la gestion des rendez-vous ---
 def est_disponible(date_rdv, heure_rdv):
     try:
         df = pd.read_csv("rendezvous.csv")
@@ -56,6 +103,18 @@ def enregistrer_rdv(nom, prenom, date_rdv, heure_rdv):
         df = pd.DataFrame(columns=["Nom", "Prénom", "Date", "Heure"])
     df = df.append({"Nom": nom, "Prénom": prenom, "Date": str(date_rdv), "Heure": str(heure_rdv)}, ignore_index=True)
     df.to_csv("rendezvous.csv", index=False)
+
+# --- Menu principal ---
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Aller vers :", [
+    "🏠 Accueil",
+    "📄 Formulaire retraite",
+    "📊 Tableau de bord",
+    "📊 Voir les demandes",
+    "📅 Prendre un rendez-vous"
+])
+
+# --- Pages ---
 
 if page == "🏠 Accueil":
     st.title("🧓 Accompagnement Retraite – Permanence Sociale")
@@ -93,6 +152,9 @@ elif page == "📊 Voir les demandes":
         st.dataframe(df)
     except FileNotFoundError:
         st.warning("Aucune demande enregistrée pour le moment.")
+
+elif page == "📊 Tableau de bord":
+    dashboard_section()
 
 elif page == "📅 Prendre un rendez-vous":
     st.title("📅 Prendre un rendez-vous")
