@@ -11,34 +11,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- Intégration image de fond ---
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-image_path = "/mnt/data/8f892748-481f-4216-b84b-977b7681315b.png"
-img_base64 = get_base64_of_bin_file(image_path)
-
-page_bg_img = f"""
-<style>
-.stApp {{
-    background-image: url("data:image/png;base64,{img_base64}");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}}
-</style>
-"""
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
-# --- Ton code habituel ---
-# --- Chargement CSS personnalisé (optionnel) ---
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 try:
     load_css("styles.css")
