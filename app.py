@@ -11,13 +11,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- Chargement CSS personnalisé (optionnel) ---
-def load_css(file):
-    try:
-        with open(file) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    except FileNotFoundError:
-        pass
 
 load_css("styles.css")
 
