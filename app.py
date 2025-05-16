@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import csv
@@ -169,6 +168,7 @@ elif page == "📅 Prendre un rendez-vous":
         if st.button("Confirmer le rendez-vous"):
             enregistrer_rdv(nom, prenom, date_rdv, heure_rdv)
             st.success(f"Rendez-vous confirmé pour le {date_rdv} à {heure_rdv}.")
+
 
 
 
